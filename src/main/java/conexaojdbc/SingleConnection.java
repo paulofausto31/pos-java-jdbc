@@ -9,6 +9,7 @@ public class SingleConnection {
 	private static String password = "too4Ture";
 	private static String user = "developer";
 	private static Connection connection = null;
+	private static Connection connection1 = null;
 	
 	static {
 		conectar();
