@@ -11,13 +11,13 @@ import conexaojdbc.SingleConnection;
 import model.Userposjava;
 
 public class UserPosDAO {
-	
+
 	private Connection connection;
-	
+
 	public UserPosDAO() {
 		connection = SingleConnection.getConnection();
 	}
-	
+
 	public void Salvar(Userposjava userPosJava) throws SQLException {
 		String sql = "insert into userposjava (nome,email) values (?,?)";
 		PreparedStatement insert;
@@ -33,24 +33,24 @@ public class UserPosDAO {
 		}
 
 	}
-	
+
 	public List<Userposjava> Listar() throws SQLException{
 		List<Userposjava> list = new ArrayList<Userposjava>();
-		
+
 		String sql = "Select * from userposjava";
-		
+
 		PreparedStatement statement = connection.prepareStatement(sql);
-		
+
 		ResultSet resultado = statement.executeQuery();
-		
+
 		while (resultado.next()) {
 			Userposjava userPosJava = new Userposjava();
 			userPosJava.setNome(resultado.getString("nome"));
 			userPosJava.setEmail(resultado.getString("email"));
-			
+
 			list.add(userPosJava);
 		}
-		
+
 		return list;
 	}
 

@@ -1,10 +1,10 @@
 package model;
 
 public class Userposjava {
-	
+
 	private String nome;
 	private String email;
-	
+
 	@Override
 	public String toString() {
 		return "Userposjava [nome=" + nome + ", email=" + email + "]";

@@ -4,17 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class SingleConnection {
-	
+
 	private static String url = "jdbc:sqlserver://URANO;database=SASFSARHBD_CSQV;";
 	private static String password = "too4Ture";
 	private static String user = "developer";
 	private static Connection connection = null;
 	private static Connection connection1 = null;
-	
+
 	static {
 		conectar();
 	}
-	
+
 	public SingleConnection() {
 		conectar();
 	}
@@ -30,7 +30,7 @@ public class SingleConnection {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static Connection getConnection() {
